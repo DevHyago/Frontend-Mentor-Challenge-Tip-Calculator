@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+:root{
+   --strong-cyan: hsl(172, 67%, 45%);
+   --very-dark-cyan: hsl(183, 100%, 15%);
+   --dark-grayish-cyan: hsl(186, 14%, 43%);
+   --dark-grayish-cyan: hsl(184, 14%, 56%);
+   --light-grayish-cyan: hsl(185, 41%, 84%);
+   --light-grayish--cyan: hsl(189, 41%, 97%);
+   --white: hsl(0, 0%, 100%);
+}
+
+input{
+   width: 100%;
+   padding: 5px 30px;
+   background-color: var(--light-grayish--cyan);
+   border: 1px solid transparent;
+   border-radius: 5px;
+   text-align: right;
+   font-size: 24px;
+}
+
+input:focus{
+   border: 1px solid var(--strong-cyan);
+   box-shadow: 0 0 0 0;
+   outline: 0;
+   box-sizing: border-box !important;
+}
+
+input::placeholder{
+   font-size: 22px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+*{
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   box-sizing: border-box;
+   font-family: 'Space Mono', monospace;
+}
+
+body{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   background-color: var(--light-grayish-cyan);
+}
+
+.active{
+   background-color: var(--strong-cyan) !important;
+   color: var(--very-dark-cyan);
+}
+
+main{
+   max-width: 900px;
+   padding: 30px;
+   border-radius: 15px;
+   background-color: var(--white);
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+main > div{
+   width: calc(50% - 15px);
+   border-radius: 10px;
+}
+
+main div.inputs{
+   padding: 10px;
+}
+
+main div.result{
+   background-color: var(--very-dark-cyan);
+   padding: 30px;
+}
+
+/*Inputs*/
+div.input{
+   display: block;
+   position: relative;
+}
+
+div.input div.icon{
+   width: 20px;
+   height: 20px;
+   background-image: url(../images/icon-dollar.svg);
+   background-repeat: no-repeat;
+   position: absolute;
+   top: calc(50% - 8px);
+   left: 15px;
+}
+
+div.input div.person{
+   background-image: url(../images/icon-person.svg);
+}
+
+.selected-percent{
+   margin: 20px 0;
+}
+
+.selected-percent ul{
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.selected-percent ul li{
+   cursor: pointer;
+   padding: 10px;
+   width: 120px;
+   background-color: var(--very-dark-cyan);
+   border-radius: 5px;
+   text-align: center;
+   margin: 5px 0;
+   font-weight: bold;
+}
+
+.selected-percent ul li.custom-percentage{
+   background-color: var(--light-grayish--cyan);
+   padding: 0;
+}
+
+.selected-percent ul li input{
+   background-color: transparent;
+   border: 1px solid transparent;
+   padding: 0 5px;
+   height: 100%;
+}
+
+.selected-percent ul li input:focus{
+   border: 1px solid var(--strong-cyan);
+   box-shadow: 0 0 0 0;
+   outline: 0;
+}
+
+
+
+
+
+
+
+
+/* Feel free to remove these styles or customise in your own stylesheet 👍 */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

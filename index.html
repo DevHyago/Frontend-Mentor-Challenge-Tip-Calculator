@@ -7,21 +7,47 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
   <header>
-
+    <img src="images/logo.svg" alt="logo">
   </header>
 
   <main>
-    
+    <div class="inputs">
+
+      
+      <label for="bill">Bill</label>
+      <div class="input">
+        <input type="number" id="bill" placeholder="0">
+        <div class="icon"></div>
+      </div>
+
+      <div class="selected-percent">
+        <label>Selected Tip %</label>
+        <ul>
+          <li>5%</li>
+          <li>10%</li>
+          <li class="active">15%</li>
+          <li>25%</li>
+          <li>50%</li>
+          <li class="custom-percentage"><input type="number" placeholder="Custom"></li>
+        </ul>
+      </div>
+
+      <label for="numberPeople">Number of People</label>
+      <div class="input">
+        <input type="number" id="numberPeople" placeholder="0">
+        <div class="icon person"></div>
+      </div>
+
+    </div>
+    <div class="result">
+      <h1>result</h1>
+    </div>
   </main>
   
   <div class="attribution">
