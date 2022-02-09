@@ -5,13 +5,17 @@ function selectElementAll(element){
    return document.querySelectorAll(element);
 }
 
+let buttonReset = selectElement('#reset');
+
 //selected tip 
 let selectedTip = 0;
 let listPercentage = selectElementAll('.selected-percent ul li');
 
 for(let i = 0; i < listPercentage.length-1; i++){
    listPercentage[i].addEventListener('click', (e) => {
-      selectElement('.selected-percent ul li.selected').classList.remove('selected');
+      if(selectElement('.selected-percent ul li.selected')){
+         selectElement('.selected-percent ul li.selected').classList.remove('selected');
+      }
       listPercentage[i].classList = 'selected';
       selectedTip = parseInt(listPercentage[i].innerHTML.substring(0, listPercentage[i].innerHTML.length-1));
    });
@@ -33,11 +37,29 @@ function execCalc(){
 
    selectElement('#tip-amount').innerHTML = tipCalculator.getTipAmount();
    selectElement('#total').innerHTML = tipCalculator.getTipAmount();
-   
+
+   buttonReset.style.backgroundColor = 'var(--strong-cyan)';
+   buttonReset.style.cursor = 'pointer';
+   buttonReset.addEventListener('click', resetInputs);
 }
 
 
+//removing tip select class
+selectElement('.selected-percent ul li input').addEventListener('click', () => {
+   selectElement('.selected-percent ul li.selected').classList.remove('selected');
+});
 
+//reset inputs
+function resetInputs(){
+   if(selectElement('.selected-percent ul li.selected')){
+      selectElement('.selected-percent ul li.selected').classList.remove('selected');
+   }
+   selectElement('#bill').value = '';
+   selectElement('#numberPeople').value = '';
+   buttonReset.style.backgroundColor = 'var(--dark-grayish-cyan)';
+   buttonReset.style.cursor = 'auto';
+   buttonReset.removeEventListener('click', resetInputs);
+}
 
 //Events
 selectElement('#numberPeople').addEventListener('keyup', e => {
