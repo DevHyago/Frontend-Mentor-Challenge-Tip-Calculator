@@ -60,7 +60,7 @@ body{
    background-color: var(--light-grayish-cyan);
 }
 
-.active{
+.selected{
    background-color: var(--strong-cyan) !important;
    color: var(--very-dark-cyan);
 }
