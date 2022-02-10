@@ -5,9 +5,6 @@ function selectElementAll(element){
    return document.querySelectorAll(element);
 }
 
-let buttonError = document.createElement('p');
-buttonError.classList = 'error';
-
 //function multiples events
 function addEventListenerAll(element, events, fn){
    events.split(' ').forEach(event =>{
