@@ -10,6 +10,7 @@
    --white: hsl(0, 0%, 100%);
 }
 
+
 input{
    width: 100%;
    padding: 5px 30px;
@@ -192,6 +193,11 @@ div.input div.person{
     color: var(--very-dark-cyan);
     font-size: 20px;
     font-weight: bold;
+ }
+
+ .error{
+   color: #cf4040;
+   float: right;
  }
 
 @media (max-width: 620px) {

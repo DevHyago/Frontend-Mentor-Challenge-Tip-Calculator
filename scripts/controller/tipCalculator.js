@@ -36,7 +36,7 @@ class TipCalculator{
    }
 
    getTotalTip(){
-      return `$ ${(this._percentageTip / 100 * this._bill * this._numberOfPeople).toFixed(2)}`;
+      return `$ ${((this._percentageTip / 100 * this._bill) * this._numberOfPeople).toFixed(2)}`;
    }
 
 }
